@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to Apex Talent Portal - Admin Dashboard or Recruiter Workspace.">
+  <title>Login | Apex Talent Partners</title>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/responsive.css">
+</head>
+<body style="background: linear-gradient(135deg, #0B0F19 0%, #111827 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem 1rem;">
+
+  <main style="width: 100%; display: flex; align-items: center; justify-content: center;">
+    <div class="container container-narrow" style="max-width: 520px;">
+      <div class="card" style="padding: 3rem; background-color: #FFFFFF; border-radius: var(--radius-lg); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <a href="index.html" class="brand-logo" style="display: inline-block; margin-bottom: 1.25rem;">
+            <img src="assets/logo.webp" alt="Stackly Logo" class="brand-logo-img" style="height: 44px;">
+          </a>
+          <span class="badge badge-primary" style="display: block; width: fit-content; margin: 0 auto 0.75rem auto;"><i class="fa-solid fa-lock"></i> Portal Authentication</span>
+          <h1 class="section-title" style="font-size: 2rem; margin-top: 0.5rem;">Sign In to Portal</h1>
+          <p class="section-description">Select your administrative or recruiter role to access your dashboard workspace.</p>
+        </div>
+
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label">Select Dashboard Role *</label>
+            <div class="role-selector">
+              <label class="role-card selected">
+                <input type="radio" name="login-role" value="Admin" checked>
+                <div class="role-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="role-title">Agency Admin</div>
+                <div style="font-size: 0.775rem; color: var(--text-muted);">Full Management Access</div>
+              </label>
+
+              <label class="role-card">
+                <input type="radio" name="login-role" value="Recruiter">
+                <div class="role-icon" style="color: var(--accent-teal);"><i class="fa-solid fa-user-gear"></i></div>
+                <div class="role-title">Senior Recruiter</div>
+                <div style="font-size: 0.775rem; color: var(--text-muted);">Workspace & Shortlists</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="login-email" class="form-label">Email Address *</label>
+            <input type="email" id="login-email" class="form-control" placeholder="admin@apextalent.com" required>
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password" class="form-label">Password *</label>
+            <div style="position: relative;">
+              <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+              <button type="button" class="password-toggle-btn" aria-label="Toggle Password Visibility" style="position: absolute; right: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+            <div class="invalid-feedback">Password is required.</div>
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            <i class="fa-solid fa-right-to-bracket"></i> Sign In to Portal
+          </button>
+        </form>
+
+        <div class="text-center" style="margin-top: 1.75rem; font-size: 0.95rem; color: var(--text-muted);">
+          Don't have a portal account? <a href="signup.html" style="color: var(--primary-blue); font-weight: 700;">Sign Up Here</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/main.js"></script>
+  <script src="assets/auth.js"></script>
+  <script src="assets/validation.js"></script>
+</body>
+</html>
