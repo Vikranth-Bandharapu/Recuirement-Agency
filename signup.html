@@ -17,6 +17,14 @@
 
   <main style="width: 100%; display: flex; align-items: center; justify-content: center;">
     <div class="container container-narrow" style="max-width: 620px;">
+      
+      <!-- Top Back to Home Button -->
+      <div style="margin-bottom: 1.25rem;">
+        <a href="index.html" class="btn btn-outline btn-sm" style="color: #FFFFFF; border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.08);">
+          <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+      </div>
+
       <div class="card" style="padding: 3rem; background-color: #FFFFFF; border-radius: var(--radius-lg); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);">
         <div class="text-center" style="margin-bottom: 2rem;">
           <a href="index.html" class="brand-logo" style="display: inline-block; margin-bottom: 1.25rem;">
@@ -28,8 +36,6 @@
         </div>
 
         <form id="signup-form" novalidate>
-
-
           <div class="form-group">
             <label for="signup-name" class="form-label">Full Name *</label>
             <input type="text" id="signup-name" class="form-control" placeholder="e.g. Alexander Mercer" required>
@@ -83,6 +89,13 @@
         <div class="text-center" style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-muted);">
           Already have an account? <a href="login.html" style="color: var(--primary-blue); font-weight: 700;">Sign In Here</a>
         </div>
+
+        <div class="text-center" style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+          <a href="index.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-house"></i> Return to Homepage
+          </a>
+        </div>
+
       </div>
     </div>
   </main>

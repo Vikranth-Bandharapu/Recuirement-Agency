@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Apex Talent Partners - Senior Recruiter Workspace & Candidate Sourcing Productivity Dashboard.">
+  <meta name="description" content="Apex Talent Partners - Recruiter Workspace Dashboard for Senior Headhunters and Staffing Consultants.">
   <title>Recruiter Workspace | Apex Talent Partners</title>
 
   <!-- Font Awesome 6 Icons -->
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/responsive.css">
   <link rel="stylesheet" href="assets/dashboard.css">
 </head>
-<body class="recruiter-theme">
+<body>
 
   <div class="dashboard-layout">
     <!-- SECTION 1: RECRUITER SIDEBAR NAVIGATION -->
@@ -32,6 +32,7 @@
         <a href="#shortlist" class="sidebar-item"><i class="fa-solid fa-user-check"></i> Candidate Shortlist <span class="sidebar-badge">32</span></a>
         <a href="#pipeline" class="sidebar-item"><i class="fa-solid fa-diagram-project"></i> Sourcing Pipeline</a>
         <a href="#interviews" class="sidebar-item"><i class="fa-solid fa-calendar-check"></i> Today's Interviews <span class="sidebar-badge">4</span></a>
+        <a href="#targets" class="sidebar-item"><i class="fa-solid fa-bullseye"></i> Monthly Targets</a>
         <a href="index.html" class="sidebar-item logout-btn" style="color: #EF4444; margin-top: 1.5rem;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
       </nav>
 
@@ -52,14 +53,16 @@
     <main class="dashboard-main">
       <div class="dashboard-body">
 
+        <!-- =================================================================== -->
         <!-- 1. MY WORKSPACE SECTION -->
+        <!-- =================================================================== -->
         <div id="welcome-wrapper">
           <section class="dash-banner" id="welcome">
             <div class="dash-banner-content">
               <h2>Good Morning, <span class="user-greeting-name">David</span>! 🚀</h2>
               <p>You have <strong>4 interviews</strong> scheduled today. 2 candidates are awaiting client offer responses.</p>
             </div>
-            <div>
+            <div class="dash-banner-actions">
               <button class="btn btn-primary" style="background-color: var(--accent-teal);" onclick="window.location.href='404.html'" data-quick-action="Schedule New Candidate Screening">
                 <i class="fa-solid fa-user-plus"></i> Add New Candidate
               </button>
@@ -67,7 +70,7 @@
           </section>
 
           <!-- PERSONAL KPIS -->
-          <section class="kpi-row" id="personal-kpis">
+          <section class="kpi-row" id="personal-kpis" style="margin-top: 1.5rem;">
             <div class="kpi-card">
               <div class="kpi-icon kpi-icon-teal"><i class="fa-solid fa-briefcase"></i></div>
               <div>
@@ -99,29 +102,44 @@
               <div class="kpi-icon kpi-icon-purple"><i class="fa-solid fa-circle-check"></i></div>
               <div>
                 <div class="kpi-value">5</div>
-                <div class="kpi-label">Placements Month-to-Date</div>
+                <div class="kpi-label">Placements MTD</div>
                 <div class="kpi-trend trend-up">Goal: 6 Hires</div>
               </div>
             </div>
           </section>
 
-          <!-- WORKFLOW CHECKLIST -->
-          <section class="dash-card" style="margin-top: 1.5rem;">
-            <div class="dash-card-header">
-              <h3 class="dash-card-title"><i class="fa-solid fa-list-ul" style="color: var(--accent-teal);"></i> Priority Sourcing Checklist</h3>
-            </div>
-            <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-dark);">
-              <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Confirm offer letter terms with Marcus Vance (Target closing: 5:00 PM).</li>
-              <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Send background screening link to Elena Rostova for AI Architect role.</li>
-              <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Schedule final interview debrief with FinTech Dynamics hiring manager.</li>
-            </ul>
-          </section>
+          <!-- WORKFLOW CHECKLIST & QUICK NOTES -->
+          <div class="grid grid-2" style="margin-top: 1.5rem;">
+            <section class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-list-ul" style="color: var(--accent-teal);"></i> Priority Sourcing Checklist</h3>
+              </div>
+              <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-dark);">
+                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Confirm offer letter terms with Marcus Vance (Target closing: 5:00 PM).</li>
+                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Send background screening link to Elena Rostova for AI Architect role.</li>
+                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Schedule final interview debrief with FinTech Dynamics hiring manager.</li>
+                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Review senior candidate shortlist for Tata Tech Solutions CISO role.</li>
+              </ul>
+            </section>
+
+            <section class="dash-card">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-note-sticky" style="color: var(--accent-gold);"></i> Recruiter Daily Reminders</h3>
+              </div>
+              <div style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-md); font-size: 0.9rem; line-height: 1.6;">
+                <p>📌 <strong>Client Feedback Call:</strong> 2:00 PM with CloudScale VP of Engineering regarding DevOps candidates.</p>
+                <p style="margin-top: 0.5rem;">📌 <strong>Salary Negotiation:</strong> Arjun Patel expecting $175k base + 15% bonus for Lead Architect position.</p>
+              </div>
+            </section>
+          </div>
         </div>
 
+        <!-- =================================================================== -->
         <!-- 2. MY MANAGED JOBS SECTION -->
-        <section class="dash-card" id="active-jobs">
+        <!-- =================================================================== -->
+        <section class="dash-card" id="active-jobs" style="margin-top: 1.5rem;">
           <div class="dash-card-header">
-            <h3 class="dash-card-title"><i class="fa-solid fa-list-check" style="color: var(--primary-blue);"></i> My Active Managed Requisitions</h3>
+            <h3 class="dash-card-title"><i class="fa-solid fa-list-check" style="color: var(--primary-blue);"></i> My Active Managed Requisitions (8 Total)</h3>
             <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Post Requisition"><i class="fa-solid fa-plus"></i> Post Job</button>
           </div>
           <div class="table-responsive">
@@ -169,13 +187,31 @@
                   <td><span class="status-badge status-pending">Offer Stage</span></td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Shortlist">Manage</button></td>
                 </tr>
+                <tr>
+                  <td><strong>Staff Data Engineer</strong></td>
+                  <td>Razorpay Payments</td>
+                  <td>$180,000 - $210,000</td>
+                  <td>7 candidates</td>
+                  <td><span class="status-badge status-active">Sourcing</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Shortlist">Manage</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Quant Risk Specialist</strong></td>
+                  <td>Apex Capital Partners</td>
+                  <td>$290,000 - $340,000</td>
+                  <td>5 candidates</td>
+                  <td><span class="status-badge status-active">Interviewing</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Shortlist">Manage</button></td>
+                </tr>
               </tbody>
             </table>
           </div>
         </section>
 
+        <!-- =================================================================== -->
         <!-- 3. CANDIDATE SHORTLIST SECTION -->
-        <section class="dash-card" id="shortlist">
+        <!-- =================================================================== -->
+        <section class="dash-card" id="shortlist" style="margin-top: 1.5rem;">
           <div class="dash-card-header">
             <h3 class="dash-card-title"><i class="fa-solid fa-star" style="color: var(--accent-gold);"></i> Shortlisted Candidate Rating Matrix</h3>
             <span class="badge badge-gold">32 Candidates Sourced</span>
@@ -213,13 +249,22 @@
                   <td><span style="color: #F59E0B;">★★★★☆</span> (90% Match)</td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Schedule Interview">Schedule Interview</button></td>
                 </tr>
+                <tr>
+                  <td><strong>Vikram Sundaram</strong></td>
+                  <td>DevOps, Terraform, AWS Cloud</td>
+                  <td>Senior DevOps Lead</td>
+                  <td><span style="color: #F59E0B;">★★★★★</span> (94% Match)</td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Schedule Interview">Schedule Interview</button></td>
+                </tr>
               </tbody>
             </table>
           </div>
         </section>
 
+        <!-- =================================================================== -->
         <!-- 4. SOURCING PIPELINE SECTION -->
-        <section class="dash-card" id="pipeline">
+        <!-- =================================================================== -->
+        <section class="dash-card" id="pipeline" style="margin-top: 1.5rem;">
           <div class="dash-card-header">
             <h3 class="dash-card-title"><i class="fa-solid fa-diagram-project" style="color: var(--accent-teal);"></i> Live Candidate Sourcing Pipeline</h3>
             <span class="badge badge-teal">Kanban Board</span>
@@ -244,67 +289,94 @@
                 <div class="mini-card-name">Sarah Jenkins</div>
                 <div class="mini-card-role">Clinical Director</div>
               </div>
+              <div class="candidate-mini-card">
+                <div class="mini-card-name">Vikram Sundaram</div>
+                <div class="mini-card-role">DevOps Lead</div>
+              </div>
             </div>
 
             <div class="pipeline-column">
               <div class="column-header">INTERVIEWING (6) <i class="fa-solid fa-ellipsis"></i></div>
               <div class="candidate-mini-card">
-                <div class="mini-card-name">Marcus Vance</div>
-                <div class="mini-card-role">VP of Engineering</div>
+                <div class="mini-card-name">Arjun Patel</div>
+                <div class="mini-card-role">Full-Stack Architect</div>
               </div>
             </div>
 
             <div class="pipeline-column">
               <div class="column-header">OFFERED (2) <i class="fa-solid fa-ellipsis"></i></div>
-              <div class="candidate-mini-card">
-                <div class="mini-card-name">Alex Taylor</div>
-                <div class="mini-card-role">Lead Product Manager</div>
+              <div class="candidate-mini-card" style="border-left-color: #10B981;">
+                <div class="mini-card-name">Marcus Vance</div>
+                <div class="mini-card-role">VP Engineering</div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- 5. TODAY'S INTERVIEWS SECTION -->
-        <section class="dash-card" id="interviews">
+        <!-- =================================================================== -->
+        <!-- 5. TODAY'S INTERVIEWS SCHEDULE -->
+        <!-- =================================================================== -->
+        <section class="dash-card" id="interviews" style="margin-top: 1.5rem;">
           <div class="dash-card-header">
-            <h3 class="dash-card-title"><i class="fa-solid fa-calendar-check" style="color: var(--primary-blue);"></i> Today's Scheduled Interviews</h3>
-            <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'" data-quick-action="Schedule Interview"><i class="fa-solid fa-calendar-plus"></i> Schedule New</button>
+            <div>
+              <h3 class="dash-card-title"><i class="fa-solid fa-calendar-check" style="color: var(--accent-gold);"></i> Today's Scheduled Candidate Interviews</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Live interview timetable for Wednesday, September 30, 2026.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'" data-quick-action="Schedule Interview"><i class="fa-solid fa-plus"></i> Schedule New Slot</button>
           </div>
-          <div class="table-responsive">
-            <table class="dash-table">
-              <thead>
-                <tr>
-                  <th>Time Slot</th>
-                  <th>Candidate</th>
-                  <th>Target Position</th>
-                  <th>Assessment Type</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>10:30 AM EST</strong></td>
-                  <td>Elena Rostova</td>
-                  <td>Principal AI Architect</td>
-                  <td>Technical Coding & LLM System Design</td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Join Video Call"><i class="fa-solid fa-video"></i> Join Link</button></td>
-                </tr>
-                <tr>
-                  <td><strong>02:00 PM EST</strong></td>
-                  <td>Marcus Vance</td>
-                  <td>VP of Engineering</td>
-                  <td>Client C-Suite Culture Assessment</td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Join Video Call"><i class="fa-solid fa-video"></i> Join Link</button></td>
-                </tr>
-                <tr>
-                  <td><strong>04:15 PM EST</strong></td>
-                  <td>Arjun Patel</td>
-                  <td>Lead Full-Stack Architect</td>
-                  <td>Recruiter Screening & Portfolio Review</td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Join Video Call"><i class="fa-solid fa-video"></i> Join Link</button></td>
-                </tr>
-              </tbody>
-            </table>
+
+          <div class="grid grid-2">
+            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-blue);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary-blue);">10:00 AM - 10:45 AM (Zoom)</div>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Elena Rostova • AI Screening</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: FinTech Dynamics (Technical Round 1)</p>
+            </div>
+            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-teal);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-teal);">11:30 AM - 12:15 PM (Zoom)</div>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Arjun Patel • Full-Stack Review</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: Infosys Innovation Lab</p>
+            </div>
+            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-gold);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold);">02:00 PM - 03:00 PM (In-Person / Salem HQ)</div>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Vikram Sundaram • Cloud Architecture</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: CloudScale Solutions</p>
+            </div>
+            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid #10B981;">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #10B981;">04:30 PM - 05:15 PM (Zoom)</div>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Marcus Vance • Final Offer Discussion</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: BioHealth Global</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- 6. MONTHLY TARGETS SECTION -->
+        <!-- =================================================================== -->
+        <section class="dash-card" id="targets" style="margin-top: 1.5rem;">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title"><i class="fa-solid fa-bullseye" style="color: var(--primary-blue);"></i> Monthly Recruiter Performance & Targets</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Track placement goals and estimated fee commissions for Q3.</p>
+            </div>
+            <span class="badge badge-primary">83% Goal Achieved</span>
+          </div>
+
+          <div class="grid grid-3">
+            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); text-align: center;">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Placement Target</div>
+              <div style="font-size: 1.75rem; font-weight: 900; color: var(--primary-blue); margin: 0.35rem 0;">5 / 6 Hires</div>
+              <div style="font-size: 0.8rem; color: #10B981;">1 Hire Needed</div>
+            </div>
+            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); text-align: center;">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Generated Fee Commission</div>
+              <div style="font-size: 1.75rem; font-weight: 900; color: var(--accent-teal); margin: 0.35rem 0;">$42,500</div>
+              <div style="font-size: 0.8rem; color: #10B981;">Target: $45,000</div>
+            </div>
+            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); text-align: center;">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Average Candidate Score</div>
+              <div style="font-size: 1.75rem; font-weight: 900; color: var(--accent-gold); margin: 0.35rem 0;">94.8%</div>
+              <div style="font-size: 0.8rem; color: #10B981;">Top 5% Recruiter</div>
+            </div>
           </div>
         </section>
 

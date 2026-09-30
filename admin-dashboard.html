@@ -30,7 +30,8 @@
         <a href="#overview" class="sidebar-item active"><i class="fa-solid fa-chart-pie"></i> Dashboard Overview</a>
         <a href="#jobs" class="sidebar-item"><i class="fa-solid fa-briefcase"></i> Active Requisitions <span class="sidebar-badge">42</span></a>
         <a href="#candidates" class="sidebar-item"><i class="fa-solid fa-users"></i> Candidate Pipeline <span class="sidebar-badge">184</span></a>
-        <a href="#clients" class="sidebar-item"><i class="fa-solid fa-building"></i> Enterprise Clients</a>
+        <a href="#clients" class="sidebar-item"><i class="fa-solid fa-building"></i> Enterprise Clients <span class="sidebar-badge">12</span></a>
+        <a href="#leaderboard" class="sidebar-item"><i class="fa-solid fa-trophy"></i> Team Leaderboard</a>
         <a href="#reports" class="sidebar-item"><i class="fa-solid fa-chart-column"></i> Revenue Reports</a>
         <a href="index.html" class="sidebar-item logout-btn" style="color: #EF4444; margin-top: 1.5rem;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
       </nav>
@@ -61,7 +62,7 @@
               <h2>Welcome Back, <span class="user-greeting-name">Sophia</span>! 🚀</h2>
               <p>Agency Operations & Placement Analytics for <strong>Q3 2026</strong>. 12 new executive placements confirmed this week across tech, fintech, and biotech sectors.</p>
             </div>
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <div class="dash-banner-actions">
               <button class="btn btn-primary" onclick="window.location.href='404.html'" data-quick-action="Generate Executive Summary Report">
                 <i class="fa-solid fa-file-export"></i> Export Executive Summary
               </button>
@@ -114,7 +115,9 @@
                 <h3 class="dash-card-title"><i class="fa-solid fa-filter" style="color: var(--primary-blue);"></i> Recruitment Funnel Conversion</h3>
                 <span class="badge badge-primary">Q3 Metrics</span>
               </div>
-              <canvas id="funnelChart" height="260"></canvas>
+              <div class="canvas-responsive">
+                <canvas id="funnelChart" height="260"></canvas>
+              </div>
             </section>
 
             <section class="dash-card" id="analytics-section">
@@ -122,7 +125,9 @@
                 <h3 class="dash-card-title"><i class="fa-solid fa-chart-line" style="color: var(--accent-teal);"></i> Monthly Placement Trend</h3>
                 <span class="badge badge-teal">2026 Growth</span>
               </div>
-              <canvas id="placementTrendChart" height="260"></canvas>
+              <div class="canvas-responsive">
+                <canvas id="placementTrendChart" height="260"></canvas>
+              </div>
             </section>
           </div>
 
@@ -162,6 +167,7 @@
                 <li><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <strong>Sophia Sterling</strong> scheduled final executive interview for Dr. Sarah Jenkins.</li>
                 <li><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <strong>Victoria Palmer</strong> issued placement invoice #INV-2026-88 for BioHealth Global.</li>
                 <li><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <strong>Stackly Tamil Nadu HQ</strong> updated branch staffing targets for Salem and Chennai practice leads.</li>
+                <li><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <strong>Arjun Patel</strong> cleared 2nd round technical interview for Lead Architect role.</li>
               </ul>
             </section>
 
@@ -186,7 +192,7 @@
                 </div>
                 <div style="padding: 0.75rem; background: var(--bg-alt); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
                   <div>
-                    <strong>Senior Data Scientist Background Check</strong>
+                    <strong>Senior Data Scientist Clearance</strong>
                     <div style="font-size: 0.8rem; color: var(--text-muted);">Razorpay Payments • Cleared</div>
                   </div>
                   <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Verify Clearance">Verify</button>
@@ -248,92 +254,60 @@
                   <td>$210,000 - $240,000</td>
                   <td>14 candidates</td>
                   <td><span class="status-badge status-active">Interviewing</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Job Details">View</button></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Manage Requisition">Manage</button></td>
                 </tr>
                 <tr>
-                  <td><strong>VP of Engineering</strong></td>
-                  <td>Executive Search</td>
-                  <td>BioHealth Global</td>
+                  <td><strong>VP of Global Engineering</strong></td>
+                  <td>Technology</td>
+                  <td>CloudScale Solutions</td>
                   <td>Sophia Sterling</td>
-                  <td>$260,000 - $300,000</td>
+                  <td>$280,000 - $340,000</td>
                   <td>8 candidates</td>
                   <td><span class="status-badge status-pending">Offer Stage</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Job Details">View</button></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Manage Requisition">Manage</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Senior Corporate Controller</strong></td>
-                  <td>Finance & Accounting</td>
-                  <td>Apex Financial Group</td>
+                  <td><strong>Chief Medical Officer (CMO)</strong></td>
+                  <td>Healthcare</td>
+                  <td>BioGenix Labs</td>
                   <td>Victoria Palmer</td>
-                  <td>$180,000 - $210,000</td>
-                  <td>19 candidates</td>
+                  <td>$420,000 - $500,000</td>
+                  <td>5 candidates</td>
                   <td><span class="status-badge status-active">Sourcing</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Job Details">View</button></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Manage Requisition">Manage</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Lead Quant Risk Strategist</strong></td>
+                  <td>FinTech</td>
+                  <td>Apex Capital Partners</td>
+                  <td>David Chen</td>
+                  <td>$310,000 - $380,000</td>
+                  <td>12 candidates</td>
+                  <td><span class="status-badge status-active">Interviewing</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Manage Requisition">Manage</button></td>
                 </tr>
                 <tr>
                   <td><strong>Director of Product Management</strong></td>
-                  <td>Product & UX</td>
-                  <td>CloudNexus Inc</td>
-                  <td>David Chen</td>
-                  <td>$195,000 - $225,000</td>
-                  <td>11 candidates</td>
-                  <td><span class="status-badge status-closed">Placed</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Job Details">View</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Head of Data Engineering</strong></td>
-                  <td>Big Data & AI</td>
-                  <td>Razorpay Payments</td>
+                  <td>SaaS</td>
+                  <td>SaaSify Enterprise</td>
                   <td>Sophia Sterling</td>
-                  <td>$175,000 - $205,000</td>
-                  <td>16 candidates</td>
-                  <td><span class="status-badge status-active">Interviewing</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Job Details">View</button></td>
+                  <td>$220,000 - $260,000</td>
+                  <td>9 candidates</td>
+                  <td><span class="status-badge status-active">Sourcing</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Manage Requisition">Manage</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Chief Information Security Officer</strong></td>
+                  <td><strong>Head of Cybersecurity (CISO)</strong></td>
                   <td>Cybersecurity</td>
                   <td>Tata Tech Solutions</td>
                   <td>Victoria Palmer</td>
-                  <td>$240,000 - $280,000</td>
-                  <td>6 candidates</td>
-                  <td><span class="status-badge status-active">Sourcing</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Job Details">View</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Lead Full-Stack Architect</strong></td>
-                  <td>Software Development</td>
-                  <td>Infosys Innovation Lab</td>
-                  <td>David Chen</td>
-                  <td>$160,000 - $190,000</td>
-                  <td>22 candidates</td>
+                  <td>$290,000 - $350,000</td>
+                  <td>7 candidates</td>
                   <td><span class="status-badge status-pending">Offer Stage</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Job Details">View</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Director of People & Culture</strong></td>
-                  <td>Human Resources</td>
-                  <td>Stackly Enterprise</td>
-                  <td>Sophia Sterling</td>
-                  <td>$190,000 - $220,000</td>
-                  <td>10 candidates</td>
-                  <td><span class="status-badge status-active">Sourcing</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Job Details">View</button></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Manage Requisition">Manage</button></td>
                 </tr>
               </tbody>
             </table>
-          </div>
-
-          <!-- SUB-SECTION: HOT REQUISITION ALERTS & WORKLOAD DISTRIBUTION -->
-          <div class="grid grid-2" style="margin-top: 1.5rem;">
-            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-top: 3px solid #EF4444;">
-              <h4 style="font-size: 0.95rem; font-weight: 700; color: #EF4444; margin-bottom: 0.5rem;"><i class="fa-solid fa-fire"></i> Hot Priority Sourcing Requisitions</h4>
-              <p style="font-size: 0.85rem; color: var(--text-dark);"><strong>VP of Engineering (BioHealth Global)</strong> requires 2 additional shortlisted candidates before Friday client review.</p>
-            </div>
-            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-top: 3px solid var(--primary-blue);">
-              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 0.5rem;"><i class="fa-solid fa-chart-pie"></i> Recruiter Capacity Distribution</h4>
-              <p style="font-size: 0.85rem; color: var(--text-dark);">Sophia: <strong>14 Roles</strong> (90% Cap) | David: <strong>16 Roles</strong> (95% Cap) | Victoria: <strong>12 Roles</strong> (80% Cap)</p>
-            </div>
           </div>
         </section>
 
@@ -343,118 +317,78 @@
         <section class="dash-card" id="candidates">
           <div class="dash-card-header">
             <div>
-              <h3 class="dash-card-title"><i class="fa-solid fa-user-check" style="color: var(--accent-teal);"></i> Top Shortlisted Candidates (184 Total)</h3>
-              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Pre-screened executive talent matched with active requisitions.</p>
+              <h3 class="dash-card-title"><i class="fa-solid fa-users" style="color: var(--accent-teal);"></i> Global Candidate Database & Pipeline (1,240 Total)</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Live candidate database search across tech, finance, and healthcare practices.</p>
             </div>
-            <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Import Candidate Batch"><i class="fa-solid fa-upload"></i> Import Profiles</button>
+            <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'" data-quick-action="Add Candidate Profile"><i class="fa-solid fa-user-plus"></i> Import Resume Profile</button>
           </div>
 
-          <!-- Sourcing Channels Grid -->
-          <div class="grid grid-3" style="margin-bottom: 1.5rem;">
-            <div style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">LinkedIn Executive Sourcing</div>
-              <div style="font-size: 1.35rem; font-weight: 800; color: var(--primary-blue); margin-top: 0.25rem;">45% Share</div>
-            </div>
-            <div style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Direct Headhunter Referrals</div>
-              <div style="font-size: 1.35rem; font-weight: 800; color: var(--accent-teal); margin-top: 0.25rem;">30% Share</div>
-            </div>
-            <div style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Exclusive Talent Network</div>
-              <div style="font-size: 1.35rem; font-weight: 800; color: var(--accent-gold); margin-top: 0.25rem;">25% Share</div>
-            </div>
+          <div style="position: relative; margin-bottom: 1.5rem;">
+            <input type="text" id="dash-table-search" placeholder="Search candidate by name, skill, location or target role..." class="form-control" style="padding-left: 2.75rem;" aria-label="Search candidate pipeline">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
           </div>
 
-          <!-- Candidate Table -->
           <div class="table-responsive">
             <table class="dash-table">
               <thead>
                 <tr>
                   <th>Candidate Name</th>
+                  <th>Current Title</th>
                   <th>Primary Skillset</th>
-                  <th>Target Requisition</th>
-                  <th>Expected CTC / Salary</th>
-                  <th>Notice Period</th>
-                  <th>Assigned Headhunter</th>
-                  <th>Stage</th>
+                  <th>Location</th>
+                  <th>Match Score</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Marcus Vance</strong></td>
-                  <td>Distributed Systems, Kubernetes</td>
-                  <td>VP of Engineering</td>
-                  <td>$270,000</td>
-                  <td>Immediate</td>
-                  <td>Sophia Sterling</td>
-                  <td><span class="status-badge status-pending">Final Interview</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Contact Candidate">Contact</button></td>
+                  <td><strong>Elena Rostova</strong></td>
+                  <td>Staff AI Engineer</td>
+                  <td>PyTorch, LLM Fine-Tuning, AWS</td>
+                  <td>New York, USA</td>
+                  <td><span style="color: #F59E0B;">★★★★★</span> 98%</td>
+                  <td><span class="status-badge status-active">Shortlisted</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Profile">View Profile</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Elena Rostova</strong></td>
-                  <td>PyTorch, AWS, LLM Fine-Tuning</td>
-                  <td>Principal AI Architect</td>
-                  <td>$230,000</td>
-                  <td>30 Days</td>
-                  <td>David Chen</td>
-                  <td><span class="status-badge status-active">Client Interview</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Contact Candidate">Contact</button></td>
+                  <td><strong>Marcus Vance</strong></td>
+                  <td>VP Engineering</td>
+                  <td>Go, Kubernetes, System Design</td>
+                  <td>San Francisco, USA</td>
+                  <td><span style="color: #F59E0B;">★★★★★</span> 95%</td>
+                  <td><span class="status-badge status-pending">Interview Scheduled</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Profile">View Profile</button></td>
                 </tr>
                 <tr>
                   <td><strong>Dr. Sarah Jenkins</strong></td>
-                  <td>Biotech Regulatory, Clinical Trials</td>
-                  <td>VP Operations</td>
-                  <td>$250,000</td>
-                  <td>Notice Served</td>
-                  <td>Victoria Palmer</td>
-                  <td><span class="status-badge status-active">Background Check</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Contact Candidate">Contact</button></td>
+                  <td>Clinical Research Lead</td>
+                  <td>Oncology, Clinical Trials, FDA</td>
+                  <td>London, UK</td>
+                  <td><span style="color: #F59E0B;">★★★★★</span> 97%</td>
+                  <td><span class="status-badge status-active">Offer Extended</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Profile">View Profile</button></td>
                 </tr>
                 <tr>
                   <td><strong>Arjun Patel</strong></td>
-                  <td>React, Node.js, Microservices</td>
-                  <td>Lead Full-Stack Architect</td>
-                  <td>$180,000</td>
-                  <td>15 Days</td>
-                  <td>David Chen</td>
+                  <td>Lead Architect</td>
+                  <td>React, Microservices, Node.js</td>
+                  <td>Chennai, India</td>
+                  <td><span style="color: #F59E0B;">★★★★☆</span> 90%</td>
+                  <td><span class="status-badge status-active">Screening</span></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Profile">View Profile</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Vikram Sundaram</strong></td>
+                  <td>Principal Cloud Engineer</td>
+                  <td>DevOps, Terraform, Azure</td>
+                  <td>Salem, India</td>
+                  <td><span style="color: #F59E0B;">★★★★★</span> 94%</td>
                   <td><span class="status-badge status-active">Technical Round</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Contact Candidate">Contact</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Priya Sharma</strong></td>
-                  <td>Cybersecurity, CISSP, Zero-Trust</td>
-                  <td>Chief Security Officer</td>
-                  <td>$260,000</td>
-                  <td>30 Days</td>
-                  <td>Victoria Palmer</td>
-                  <td><span class="status-badge status-active">Client Interview</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Contact Candidate">Contact</button></td>
-                </tr>
-                <tr>
-                  <td><strong>Vikram Malhotra</strong></td>
-                  <td>Spark, Snowflake, Kafka</td>
-                  <td>Head of Data Engineering</td>
-                  <td>$195,000</td>
-                  <td>Immediate</td>
-                  <td>Sophia Sterling</td>
-                  <td><span class="status-badge status-pending">Offer Extended</span></td>
-                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Contact Candidate">Contact</button></td>
+                  <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Profile">View Profile</button></td>
                 </tr>
               </tbody>
             </table>
-          </div>
-
-          <!-- SUB-SECTION: CANDIDATE TECHNICAL EVALUATION & CERTIFICATIONS -->
-          <div class="grid grid-2" style="margin-top: 1.5rem;">
-            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md);">
-              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-nodes" style="color: var(--primary-blue);"></i> Technical Verification Benchmarks</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">94% average technical score across AI, Data, & System Architecture candidates.</p>
-            </div>
-            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md);">
-              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem;"><i class="fa-solid fa-graduation-cap" style="color: var(--accent-teal);"></i> Certification Compliance</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">All shortlisted candidates carry verified AWS, CISSP, or C-suite executive credentials.</p>
-            </div>
           </div>
         </section>
 
@@ -464,225 +398,116 @@
         <section class="dash-card" id="clients">
           <div class="dash-card-header">
             <div>
-              <h3 class="dash-card-title"><i class="fa-solid fa-building" style="color: var(--primary-blue);"></i> Enterprise Partner Accounts (18 Active Accounts)</h3>
-              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Key corporate accounts under executive search & retained recruitment agreements.</p>
+              <h3 class="dash-card-title"><i class="fa-solid fa-building" style="color: var(--accent-gold);"></i> Enterprise Partner Accounts (12 Active Accounts)</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Corporate clients with active retainer search agreements.</p>
             </div>
-            <span class="badge badge-primary">98.4% Retention Rate</span>
+            <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'" data-quick-action="Add Corporate Client"><i class="fa-solid fa-plus"></i> Onboard New Client</button>
           </div>
 
-          <!-- Client Portfolio Summary Cards -->
-          <div class="grid grid-3" style="margin-bottom: 1.5rem;">
-            <div class="card" style="padding: 1.5rem; background-color: var(--bg-alt);">
-              <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fa-solid fa-building-columns" style="color: var(--primary-blue);"></i> FinTech Dynamics</h4>
-              <p style="color: var(--text-muted); font-size: 0.875rem;">12 Active Requisitions</p>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">Billing: 25% Retainer Fee • Annual Contract: $380K</p>
-              <p style="color: var(--primary-blue); font-weight: 700; margin-top: 0.5rem; font-size: 0.85rem;">Account Manager: David Chen</p>
+          <div class="grid grid-3">
+            <div class="card">
+              <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-dark);">FinTech Dynamics</h4>
+              <p class="card-desc">Retained Account • 6 Open Roles</p>
+              <div style="font-size: 0.85rem; color: var(--primary-blue); font-weight: 700; margin-top: 0.5rem;">Lead: David Chen</div>
+              <button class="btn btn-outline btn-sm" style="margin-top: 1rem; width: 100%;" onclick="window.location.href='404.html'" data-quick-action="View Client Account">Account Details</button>
             </div>
-
-            <div class="card" style="padding: 1.5rem; background-color: var(--bg-alt);">
-              <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fa-solid fa-heart-pulse" style="color: var(--accent-teal);"></i> BioHealth Global</h4>
-              <p style="color: var(--text-muted); font-size: 0.875rem;">8 Active Requisitions</p>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">Billing: 30% Retainer Fee • Annual Contract: $290K</p>
-              <p style="color: var(--accent-teal); font-weight: 700; margin-top: 0.5rem; font-size: 0.85rem;">Account Manager: Sophia Sterling</p>
+            <div class="card">
+              <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-dark);">CloudScale Solutions</h4>
+              <p class="card-desc">Exclusive Account • 4 Open Roles</p>
+              <div style="font-size: 0.85rem; color: var(--accent-teal); font-weight: 700; margin-top: 0.5rem;">Lead: Sophia Sterling</div>
+              <button class="btn btn-outline btn-sm" style="margin-top: 1rem; width: 100%;" onclick="window.location.href='404.html'" data-quick-action="View Client Account">Account Details</button>
             </div>
-
-            <div class="card" style="padding: 1.5rem; background-color: var(--bg-alt);">
-              <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fa-solid fa-cloud" style="color: var(--accent-gold);"></i> CloudNexus Inc</h4>
-              <p style="color: var(--text-muted); font-size: 0.875rem;">15 Active Requisitions</p>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">Billing: 22% Retainer Fee • Annual Contract: $410K</p>
-              <p style="color: var(--accent-gold); font-weight: 700; margin-top: 0.5rem; font-size: 0.85rem;">Account Manager: David Chen</p>
-            </div>
-
-            <div class="card" style="padding: 1.5rem; background-color: var(--bg-alt);">
-              <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fa-solid fa-microchip" style="color: var(--primary-blue);"></i> Tata Tech Solutions</h4>
-              <p style="color: var(--text-muted); font-size: 0.875rem;">20 Active Requisitions</p>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">Billing: 25% Retainer Fee • Annual Contract: $520K</p>
-              <p style="color: var(--primary-blue); font-weight: 700; margin-top: 0.5rem; font-size: 0.85rem;">Account Manager: Victoria Palmer</p>
-            </div>
-
-            <div class="card" style="padding: 1.5rem; background-color: var(--bg-alt);">
-              <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fa-solid fa-network-wired" style="color: var(--accent-teal);"></i> Infosys Innovation Lab</h4>
-              <p style="color: var(--text-muted); font-size: 0.875rem;">14 Active Requisitions</p>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">Billing: 24% Retainer Fee • Annual Contract: $340K</p>
-              <p style="color: var(--accent-teal); font-weight: 700; margin-top: 0.5rem; font-size: 0.85rem;">Account Manager: David Chen</p>
-            </div>
-
-            <div class="card" style="padding: 1.5rem; background-color: var(--bg-alt);">
-              <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fa-solid fa-credit-card" style="color: var(--accent-gold);"></i> Razorpay Payments</h4>
-              <p style="color: var(--text-muted); font-size: 0.875rem;">9 Active Requisitions</p>
-              <p style="color: var(--text-muted); font-size: 0.8rem;">Billing: 28% Retainer Fee • Annual Contract: $270K</p>
-              <p style="color: var(--accent-gold); font-weight: 700; margin-top: 0.5rem; font-size: 0.85rem;">Account Manager: Sophia Sterling</p>
-            </div>
-          </div>
-
-          <!-- Client SLA Metrics Row -->
-          <div class="grid grid-3" style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-            <div style="text-align: center;">
-              <strong style="color: var(--primary-blue); font-size: 1.25rem; display: block;">12 Days Avg</strong>
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Time-to-Shortlist Candidate Match</span>
-            </div>
-            <div style="text-align: center;">
-              <strong style="color: var(--accent-teal); font-size: 1.25rem; display: block;">98% Guarantee</strong>
-              <span style="font-size: 0.8rem; color: var(--text-muted);">90-Day Candidate Placement Retention</span>
-            </div>
-            <div style="text-align: center;">
-              <strong style="color: var(--accent-gold); font-size: 1.25rem; display: block;">+74 Net Promoter</strong>
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Enterprise Client Satisfaction Score</span>
-            </div>
-          </div>
-
-          <!-- SUB-SECTION: CONTRACT RENEWALS TABLE -->
-          <div>
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;"><i class="fa-solid fa-file-contract" style="color: var(--primary-blue);"></i> Upcoming Contract Renewals (Q4 2026)</h4>
-            <div class="table-responsive">
-              <table class="dash-table">
-                <thead>
-                  <tr>
-                    <th>Client Partner</th>
-                    <th>Contract Type</th>
-                    <th>Expiration Date</th>
-                    <th>Renewal Value</th>
-                    <th>Account Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>FinTech Dynamics</strong></td>
-                    <td>Annual Master Service Agreement</td>
-                    <td>Nov 15, 2026</td>
-                    <td>$380,000</td>
-                    <td><span class="status-badge status-active">Active Renewal</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>BioHealth Global</strong></td>
-                    <td>Retained Executive Search Contract</td>
-                    <td>Dec 01, 2026</td>
-                    <td>$290,000</td>
-                    <td><span class="status-badge status-pending">In Discussion</span></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="card">
+              <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-dark);">BioGenix Labs</h4>
+              <p class="card-desc">Retained Account • 5 Open Roles</p>
+              <div style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; margin-top: 0.5rem;">Lead: Victoria Palmer</div>
+              <button class="btn btn-outline btn-sm" style="margin-top: 1rem; width: 100%;" onclick="window.location.href='404.html'" data-quick-action="View Client Account">Account Details</button>
             </div>
           </div>
         </section>
 
         <!-- =================================================================== -->
-        <!-- 5. REVENUE REPORTS SECTION -->
+        <!-- 5. TEAM LEADERBOARD SECTION -->
         <!-- =================================================================== -->
-        <section class="dash-card" id="reports">
+        <section class="dash-card" id="leaderboard">
           <div class="dash-card-header">
             <div>
-              <h3 class="dash-card-title"><i class="fa-solid fa-chart-column" style="color: var(--accent-gold);"></i> Revenue & Financial Audit Reports</h3>
-              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Q3 2026 Executive Financial Performance & Recruiter Revenue Audit.</p>
+              <h3 class="dash-card-title"><i class="fa-solid fa-trophy" style="color: var(--accent-gold);"></i> Headhunter Performance Leaderboard (Q3)</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Monthly placement totals and fee volume generated per recruiter.</p>
             </div>
-            <span class="badge badge-gold">Q3 Financial Audit</span>
+            <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Full Rankings">Full Rankings</button>
           </div>
 
-          <div class="grid grid-4" style="margin-bottom: 1.5rem;">
-            <div class="kpi-card">
-              <div>
-                <div class="kpi-value">$1.42M</div>
-                <div class="kpi-label">Q3 Gross Billings</div>
-              </div>
-            </div>
-            <div class="kpi-card">
-              <div>
-                <div class="kpi-value">$35,500</div>
-                <div class="kpi-label">Avg Placement Fee</div>
-              </div>
-            </div>
-            <div class="kpi-card">
-              <div>
-                <div class="kpi-value">$450K</div>
-                <div class="kpi-label">Retainer Collections</div>
-              </div>
-            </div>
-            <div class="kpi-card">
-              <div>
-                <div class="kpi-value">$180K</div>
-                <div class="kpi-label">Pending Invoices</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- REVENUE BY MONTH TABLE -->
-          <div class="table-responsive" style="margin-bottom: 1.5rem;">
+          <div class="table-responsive">
             <table class="dash-table">
               <thead>
                 <tr>
-                  <th>Billing Month</th>
-                  <th>Placements Completed</th>
-                  <th>Retainer Revenue</th>
-                  <th>Contingency Revenue</th>
-                  <th>Total Net Revenue</th>
+                  <th>Rank</th>
+                  <th>Recruiter Name</th>
+                  <th>Practice Lead</th>
+                  <th>Placements (Q3)</th>
+                  <th>Fee Volume</th>
+                  <th>Avg Time-to-Fill</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>July 2026</strong></td>
-                  <td>24 Hires</td>
-                  <td>$140,000</td>
-                  <td>$280,000</td>
-                  <td><strong>$420,000</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>August 2026</strong></td>
-                  <td>26 Hires</td>
-                  <td>$160,000</td>
-                  <td>$320,000</td>
-                  <td><strong>$480,000</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>September 2026 (YTD)</strong></td>
+                  <td><strong>#1 🏆</strong></td>
+                  <td><strong>Sophia Sterling</strong></td>
+                  <td>Executive Search</td>
                   <td>28 Hires</td>
-                  <td>$150,000</td>
-                  <td>$370,000</td>
-                  <td><strong>$520,000</strong></td>
+                  <td><strong style="color: var(--primary-blue);">$680,000</strong></td>
+                  <td>16 Days</td>
+                </tr>
+                <tr>
+                  <td><strong>#2 🥈</strong></td>
+                  <td><strong>David Chen</strong></td>
+                  <td>AI & Engineering</td>
+                  <td>24 Hires</td>
+                  <td><strong style="color: var(--accent-teal);">$520,000</strong></td>
+                  <td>18 Days</td>
+                </tr>
+                <tr>
+                  <td><strong>#3 🥉</strong></td>
+                  <td><strong>Victoria Palmer</strong></td>
+                  <td>Healthcare & BioTech</td>
+                  <td>18 Hires</td>
+                  <td><strong style="color: var(--accent-gold);">$380,000</strong></td>
+                  <td>21 Days</td>
                 </tr>
               </tbody>
             </table>
           </div>
+        </section>
 
-          <!-- RECRUITER REVENUE LEADERBOARD CARDS -->
-          <div style="margin-bottom: 1.5rem;">
-            <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;"><i class="fa-solid fa-award" style="color: var(--accent-gold);"></i> Recruiter Revenue Contribution (Q3)</h4>
-            <div class="grid grid-3">
-              <div class="card text-center" style="padding: 1.25rem; background-color: var(--bg-alt);">
-                <img src="assets/recruiter-1.webp" alt="Recruiter Sophia Avatar" style="width: 54px; height: 54px; border-radius: 50%; object-fit: cover; margin: 0 auto 0.5rem auto;">
-                <h4 style="font-size: 1rem; font-weight: 700;">Sophia Sterling</h4>
-                <p style="color: var(--primary-blue); font-weight: 700; font-size: 0.9rem;">$540,000 Revenue</p>
-                <p style="color: var(--text-muted); font-size: 0.8rem;">28 Placements Completed</p>
-              </div>
-              <div class="card text-center" style="padding: 1.25rem; background-color: var(--bg-alt);">
-                <img src="assets/recruiter-2.webp" alt="Recruiter David Avatar" style="width: 54px; height: 54px; border-radius: 50%; object-fit: cover; margin: 0 auto 0.5rem auto;">
-                <h4 style="font-size: 1rem; font-weight: 700;">David Chen</h4>
-                <p style="color: var(--accent-teal); font-weight: 700; font-size: 0.9rem;">$480,000 Revenue</p>
-                <p style="color: var(--text-muted); font-size: 0.8rem;">24 Placements Completed</p>
-              </div>
-              <div class="card text-center" style="padding: 1.25rem; background-color: var(--bg-alt);">
-                <img src="assets/recruiter-3.webp" alt="Recruiter Victoria Avatar" style="width: 54px; height: 54px; border-radius: 50%; object-fit: cover; margin: 0 auto 0.5rem auto;">
-                <h4 style="font-size: 1.05rem; font-weight: 700;">Victoria Palmer</h4>
-                <p style="color: var(--accent-gold); font-weight: 700; font-size: 0.9rem;">$400,000 Revenue</p>
-                <p style="color: var(--text-muted); font-size: 0.8rem;">19 Placements Completed</p>
-              </div>
+        <!-- =================================================================== -->
+        <!-- 6. REVENUE REPORTS SECTION -->
+        <!-- =================================================================== -->
+        <section class="dash-card" id="reports">
+          <div class="dash-card-header">
+            <div>
+              <h3 class="dash-card-title"><i class="fa-solid fa-chart-column" style="color: var(--primary-blue);"></i> Agency Financial & Billing Summary</h3>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">Overview of invoices issued, retainer deposits, and net fees collected.</p>
             </div>
+            <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'" data-quick-action="Download Revenue Report"><i class="fa-solid fa-file-pdf"></i> Download PDF Report</button>
           </div>
 
-          <!-- SUB-SECTION: Q4 FORECAST & TARGET PROGRESS -->
-          <div class="grid grid-2" style="margin-bottom: 1.5rem;">
-            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md);">
-              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem;"><i class="fa-solid fa-crystal-ball" style="color: var(--primary-blue);"></i> Q4 Revenue Forecast</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Projected $1.65M in gross fee revenue based on current offer-stage pipelines.</p>
+          <div class="grid grid-3">
+            <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius-md); text-align: center;">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Retainer Search Fees</div>
+              <div style="font-size: 1.75rem; font-weight: 900; color: var(--primary-blue); margin: 0.5rem 0;">$820,000</div>
+              <div style="font-size: 0.8rem; color: #10B981;">+18% Target Exceeded</div>
             </div>
-            <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md);">
-              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem;"><i class="fa-solid fa-file-invoice-dollar" style="color: var(--accent-teal);"></i> Retainer vs Contingency Billing Ratio</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">40% Retained Search Contracts • 60% Contingency Placements.</p>
+            <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius-md); text-align: center;">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Contingency Placements</div>
+              <div style="font-size: 1.75rem; font-weight: 900; color: var(--accent-teal); margin: 0.5rem 0;">$440,000</div>
+              <div style="font-size: 0.8rem; color: #10B981;">+12% vs Q2</div>
             </div>
-          </div>
-
-          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.95rem; background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md);">
-            <span>Placement Target Progress: <strong>78 / 100 Hires Completed</strong></span>
-            <span style="font-weight: 700; color: var(--primary-blue); font-size: 1.1rem;">78% Complete</span>
+            <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius-md); text-align: center;">
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Contract Staffing Margin</div>
+              <div style="font-size: 1.75rem; font-weight: 900; color: var(--accent-gold); margin: 0.5rem 0;">$160,000</div>
+              <div style="font-size: 0.8rem; color: #10B981;">+25% Recurring Margin</div>
+            </div>
           </div>
         </section>
 
