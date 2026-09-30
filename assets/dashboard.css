@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Apex Talent Partners - Dashboard Stylesheet (Admin & Recruiter)
+   Stackly Recruitment Agency - Dashboard Stylesheet (Admin & Recruiter)
    ========================================================================== */
 
 /* Dashboard Layout Structure */
@@ -358,9 +358,10 @@
   gap: 0.6rem;
 }
 
-.table-responsive {
+.table-responsive, .canvas-responsive {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .dash-table {
@@ -522,30 +523,38 @@
     cursor: pointer;
     font-size: 1.25rem;
   }
-}
-
-@media (max-width: 768px) {
   .dashboard-body {
     padding: 1.25rem 1rem;
   }
   .dash-banner {
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 1.25rem;
   }
+  .dash-banner-content {
+    width: 100%;
+    min-width: 0;
+  }
   .dash-banner-content h2 {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
+    line-height: 1.35;
   }
   .dash-banner-content p {
-    font-size: 0.925rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
   .dash-banner-actions, .dash-banner > div:last-child {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .dash-banner-actions .btn, .dash-banner > div:last-child .btn {
     width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    text-align: center;
   }
 }
 

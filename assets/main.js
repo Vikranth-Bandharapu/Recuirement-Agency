@@ -1,5 +1,5 @@
 /**
- * Apex Talent Partners - Main Global JavaScript
+ * Stackly Recruitment Agency - Main Global JavaScript
  * Handles Header Sticky, Mobile Drawer, Accordions, Toasts, and Global Utilities
  */
 
@@ -9,7 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
   initStatsCounter();
   initActiveNavLink();
+  initFormAndCtaRedirects();
 });
+
+function initFormAndCtaRedirects() {
+  const forms = document.querySelectorAll('form:not(#login-form):not(#signup-form)');
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.location.href = '404.html';
+    });
+  });
+
+  const buttons = document.querySelectorAll('.newsletter-form button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const href = btn.getAttribute('href');
+      if (href === '#' || href === '404.html') {
+        e.preventDefault();
+        window.location.href = '404.html';
+      }
+    });
+  });
+}
 
 /* --------------------------------------------------------------------------
    1. Header Sticky & Scroll Detection
@@ -41,6 +63,7 @@ function initMobileDrawer() {
     drawerOverlay.classList.add('active');
     const drawer = drawerOverlay.querySelector('.mobile-drawer');
     if (drawer) drawer.classList.add('active');
+    mobileToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     document.body.style.touchAction = 'none';
@@ -50,19 +73,27 @@ function initMobileDrawer() {
     drawerOverlay.classList.remove('active');
     const drawer = drawerOverlay.querySelector('.mobile-drawer');
     if (drawer) drawer.classList.remove('active');
+    mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
     document.body.style.touchAction = '';
   }
 
-  mobileToggle.addEventListener('click', openDrawer);
+  mobileToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (drawerOverlay.classList.contains('active')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
 
   if (drawerClose) {
     drawerClose.addEventListener('click', closeDrawer);
   }
 
   drawerOverlay.addEventListener('click', (e) => {
-    if (e.target === drawerOverlay) {
+    if (e.target === drawerOverlay || e.target.classList.contains('mobile-drawer-overlay')) {
       closeDrawer();
     }
   });

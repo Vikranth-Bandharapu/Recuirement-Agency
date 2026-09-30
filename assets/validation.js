@@ -1,5 +1,5 @@
 /**
- * Apex Talent Partners - Client-Side Form Validation Module
+ * Stackly Recruitment Agency - Client-Side Form Validation Module
  * Enforces strict validation rules with inline errors and toast feedback
  */
 

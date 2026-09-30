@@ -1,5 +1,5 @@
 /**
- * Apex Talent Partners - Pro 3D Animations & Dynamic 3D Canvas Background Renderer
+ * Stackly Recruitment Agency - Pro 3D Animations & Dynamic 3D Canvas Background Renderer
  * Renders interactive 3D WebGL / Canvas particle constellation, floating 3D geometry nodes,
  * mouse parallax tracking, GSAP ScrollTrigger reveals, and 3D card tilt tracking.
  */
@@ -171,10 +171,10 @@ function init3DCanvasBackground() {
 function initAOS() {
   if (typeof AOS !== 'undefined') {
     AOS.init({
-      duration: 900,
+      duration: 600,
       easing: 'ease-out-cubic',
       once: true,
-      offset: 120
+      offset: 20
     });
   }
 }
@@ -193,10 +193,10 @@ function initGSAPScrollTrigger() {
   if (heroContent) {
     gsap.from(heroContent.children, {
       opacity: 0,
-      y: 50,
-      duration: 1.2,
-      stagger: 0.18,
-      ease: 'power4.out'
+      y: 30,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power3.out'
     });
   }
 
@@ -204,11 +204,9 @@ function initGSAPScrollTrigger() {
   if (heroImage) {
     gsap.from(heroImage, {
       opacity: 0,
-      scale: 0.9,
-      rotationY: 15,
-      rotationX: -10,
-      duration: 1.5,
-      delay: 0.3,
+      scale: 0.95,
+      duration: 1.2,
+      delay: 0.2,
       ease: 'power3.out'
     });
   }
@@ -216,41 +214,11 @@ function initGSAPScrollTrigger() {
   const floatingBadge = document.querySelector('.floating-stat-card');
   if (floatingBadge) {
     gsap.to(floatingBadge, {
-      y: -15,
+      y: -12,
       duration: 3,
       repeat: -1,
       yoyo: true,
       ease: 'sine.inOut'
-    });
-  }
-
-  if (typeof ScrollTrigger !== 'undefined') {
-    gsap.utils.toArray('.section-header').forEach(header => {
-      gsap.from(header, {
-        scrollTrigger: {
-          trigger: header,
-          start: 'top 85%'
-        },
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        ease: 'power3.out'
-      });
-    });
-
-    gsap.utils.toArray('.card-3d').forEach((card, i) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 88%'
-        },
-        opacity: 0,
-        y: 50,
-        rotationX: 10,
-        duration: 0.8,
-        delay: (i % 3) * 0.15,
-        ease: 'power3.out'
-      });
     });
   }
 }

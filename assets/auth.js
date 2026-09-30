@@ -1,5 +1,5 @@
 /**
- * Apex Talent Partners - Auth Handler & Role Selection UI Controls
+ * Stackly Recruitment Agency - Auth Handler & Role Selection UI Controls
  * Password toggles, role card pickers, demo credential autofills, logout handlers
  */
 
@@ -62,7 +62,7 @@ function initDemoCredentials() {
 
   if (demoAdminBtn && emailInput && passwordInput) {
     demoAdminBtn.addEventListener('click', () => {
-      emailInput.value = 'admin@apextalent.com';
+      emailInput.value = 'admin@stackly.com';
       passwordInput.value = 'AdminPass2026!';
       
       const adminRadio = document.querySelector('input[name="login-role"][value="Admin"]');
@@ -70,13 +70,13 @@ function initDemoCredentials() {
         adminRadio.checked = true;
         adminRadio.closest('.role-card')?.click();
       }
-      window.showToast('Demo Credentials Loaded', 'Filled Admin credentials (admin@apextalent.com). Click "Sign In to Dashboard".', 'info');
+      window.showToast('Demo Credentials Loaded', 'Filled Admin credentials (admin@stackly.com). Click "Sign In to Dashboard".', 'info');
     });
   }
 
   if (demoRecruiterBtn && emailInput && passwordInput) {
     demoRecruiterBtn.addEventListener('click', () => {
-      emailInput.value = 'recruiter@apextalent.com';
+      emailInput.value = 'recruiter@stackly.com';
       passwordInput.value = 'RecruiterPass2026!';
       
       const recruiterRadio = document.querySelector('input[name="login-role"][value="Recruiter"]');
@@ -84,7 +84,7 @@ function initDemoCredentials() {
         recruiterRadio.checked = true;
         recruiterRadio.closest('.role-card')?.click();
       }
-      window.showToast('Demo Credentials Loaded', 'Filled Recruiter credentials (recruiter@apextalent.com). Click "Sign In to Workspace".', 'info');
+      window.showToast('Demo Credentials Loaded', 'Filled Recruiter credentials (recruiter@stackly.com). Click "Sign In to Workspace".', 'info');
     });
   }
 }
@@ -98,7 +98,7 @@ function initLogoutHandler() {
   logoutLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      window.showToast('Signing Out', 'Logging out of Apex Talent Partners portal...', 'info');
+      window.showToast('Signing Out', 'Logging out of Stackly Recruitment Agency portal...', 'info');
       setTimeout(() => {
         window.location.href = 'index.html';
       }, 1000);

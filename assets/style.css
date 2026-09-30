@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Apex Talent Partners - Pro 3D Canvas & WebGL Enhanced Stylesheet
+   Stackly Recruitment Agency - Pro 3D Canvas & WebGL Enhanced Stylesheet
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -214,9 +214,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .mobile-toggle {
   display: none;
   background: none;
+  border: none;
+  outline: none;
   font-size: 1.6rem;
   color: #FFFFFF;
   padding: 0.5rem;
+  position: relative;
+  z-index: 1200;
+  cursor: pointer;
 }
 
 /* Mobile Drawer Overlay */
@@ -311,12 +316,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .section-padding {
-  padding: 6.5rem 0;
+  padding: 1.5rem 0;
   position: relative;
 }
 
 .section-padding-sm {
-  padding: 3.5rem 0;
+  padding: 1rem 0;
 }
 
 .text-center { text-align: center; }
@@ -325,7 +330,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .section-header {
   max-width: 800px;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 1rem auto;
   position: relative;
   z-index: 2;
 }
@@ -790,7 +795,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  padding: 7.5rem 0 6.5rem 0;
+  padding: 3rem 0 2.25rem 0;
   overflow: hidden;
   background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 55%),
               radial-gradient(circle at 20% 80%, rgba(13, 148, 136, 0.08) 0%, transparent 55%),
@@ -1232,47 +1237,41 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .site-footer {
   background-color: var(--bg-dark);
   color: #94A3B8;
-  padding-top: 5rem;
+  padding-top: 4.5rem;
   padding-bottom: 2.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: center;
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr);
   gap: 3.5rem;
-  margin-bottom: 4rem;
-  text-align: center;
+  margin-bottom: 3.5rem;
+  text-align: left;
   align-items: start;
 }
 
 .footer-brand {
   max-width: 360px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-brand .brand-logo {
   color: #FFFFFF;
   margin-bottom: 1.35rem;
-  display: inline-flex;
-  justify-content: center;
+  display: inline-block;
 }
 
 .footer-brand p {
   line-height: 1.7;
   margin-bottom: 1.75rem;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-socials {
   display: flex;
-  justify-content: center;
   gap: 0.85rem;
+  justify-content: flex-start;
 }
 
 .social-icon {
@@ -1298,14 +1297,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 1.75rem;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.95rem;
+  align-items: flex-start;
 }
 
 .footer-link {
@@ -1313,31 +1312,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-size: 0.975rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.6rem;
   transition: all var(--transition-fast);
 }
 
+.footer-link i {
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
 .footer-link:hover {
   color: #FFFFFF;
-  transform: translateY(-2px);
+  transform: translateX(5px);
 }
 
 .footer-bottom {
   padding-top: 2.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1.25rem;
+  justify-content: space-between;
   font-size: 0.925rem;
 }
 
 .footer-legal {
   display: flex;
-  justify-content: center;
   gap: 1.75rem;
 }
 

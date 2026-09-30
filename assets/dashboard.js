@@ -1,5 +1,5 @@
 /**
- * Apex Talent Partners - Interactive Dashboard Script
+ * Stackly Recruitment Agency - Interactive Dashboard Script
  * Handles Canvas Charts, Sidebar Toggles, Table Search/Filters, and Quick Actions
  */
 
@@ -177,6 +177,9 @@ function initSidebarToggle() {
 function initDashboardCharts() {
   renderHiringFunnelChart();
   renderPlacementTrendChart();
+
+  window.removeEventListener('resize', initDashboardCharts);
+  window.addEventListener('resize', initDashboardCharts);
 }
 
 function renderHiringFunnelChart() {
@@ -194,7 +197,8 @@ function renderHiringFunnelChart() {
     { label: 'Placed', value: 78, color: '#10B981' }
   ];
 
-  const width = canvas.width = canvas.parentElement.clientWidth || 500;
+  const containerWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 500;
+  const width = canvas.width = Math.max(containerWidth, 340);
   const height = canvas.height = 260;
 
   const maxVal = 1240;
@@ -203,9 +207,11 @@ function renderHiringFunnelChart() {
 
   ctx.clearRect(0, 0, width, height);
 
+  const availableWidth = Math.max(width - 170, 140);
+
   data.forEach((item, index) => {
     const y = index * (barHeight + gap) + 20;
-    const barWidth = (item.value / maxVal) * (width - 150);
+    const barWidth = (item.value / maxVal) * availableWidth;
 
     // Label
     ctx.fillStyle = '#475569';
@@ -216,19 +222,19 @@ function renderHiringFunnelChart() {
     // Bar background
     ctx.fillStyle = '#F1F5F9';
     ctx.beginPath();
-    ctx.roundRect(110, y, width - 160, barHeight, 6);
+    ctx.roundRect(110, y, availableWidth, barHeight, 6);
     ctx.fill();
 
     // Bar fill
     ctx.fillStyle = item.color;
     ctx.beginPath();
-    ctx.roundRect(110, y, Math.max(barWidth, 10), barHeight, 6);
+    ctx.roundRect(110, y, Math.max(barWidth, 8), barHeight, 6);
     ctx.fill();
 
     // Value text
     ctx.fillStyle = '#0F172A';
     ctx.font = '700 12px Segoe UI';
-    ctx.fillText(item.value.toString(), 110 + barWidth + 10, y + 18);
+    ctx.fillText(item.value.toString(), 110 + barWidth + 8, y + 18);
   });
 }
 
@@ -241,7 +247,8 @@ function renderPlacementTrendChart() {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
   const placements = [24, 31, 28, 42, 38, 55, 62, 58, 74];
 
-  const width = canvas.width = canvas.parentElement.clientWidth || 500;
+  const containerWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 500;
+  const width = canvas.width = Math.max(containerWidth, 340);
   const height = canvas.height = 260;
 
   ctx.clearRect(0, 0, width, height);
@@ -346,12 +353,16 @@ function initTableSearch() {
    4. Quick Action Button Handlers
    -------------------------------------------------------------------------- */
 function initQuickActions() {
-  const actionBtns = document.querySelectorAll('[data-quick-action], .dashboard-main .btn, .dash-card .btn');
+  const actionBtns = document.querySelectorAll('[data-quick-action]');
 
   actionBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = '404.html';
+      const href = btn.getAttribute('href');
+      const onclickAttr = btn.getAttribute('onclick');
+      if (href === '404.html' || (href === '#' && !onclickAttr)) {
+        e.preventDefault();
+        window.location.href = '404.html';
+      }
     });
   });
 }
