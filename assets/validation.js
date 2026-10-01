@@ -267,11 +267,8 @@ function initContactValidation() {
     }
 
     if (isValid) {
-      window.showToast('Validation Successful', 'Form submission validated successfully. Redirecting...', 'success');
       contactForm.reset();
-      setTimeout(() => {
-        window.location.href = '404.html';
-      }, 1000);
+      window.location.href = '404.html';
     } else {
       window.showToast('Incomplete Form', 'Please correct the errors before submitting.', 'error');
     }

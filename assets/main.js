@@ -13,22 +13,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initFormAndCtaRedirects() {
-  const forms = document.querySelectorAll('form:not(#login-form):not(#signup-form)');
-  forms.forEach(form => {
+  const REGEX_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  // Newsletter Forms custom validation
+  const newsletterForms = document.querySelectorAll('.newsletter-form');
+  newsletterForms.forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      window.location.href = '404.html';
+      const emailInput = form.querySelector('input[name="newsletter-email"]');
+      const feedback = form.querySelector('.invalid-feedback');
+      
+      let isValid = true;
+      if (emailInput && (!emailInput.value.trim() || !REGEX_EMAIL.test(emailInput.value.trim()))) {
+        if (feedback) {
+          feedback.style.display = 'block';
+          emailInput.style.borderColor = '#EF4444';
+        }
+        if (window.showToast) window.showToast('Validation Error', 'Please enter a valid email address.', 'error');
+        isValid = false;
+      } else {
+        if (feedback) {
+          feedback.style.display = 'none';
+          emailInput.style.borderColor = '#E2E8F0';
+        }
+      }
+      
+      if (isValid) {
+        form.reset();
+        window.location.href = '404.html';
+      }
     });
   });
 
-  const buttons = document.querySelectorAll('.newsletter-form button');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const href = btn.getAttribute('href');
-      if (href === '#' || href === '404.html') {
-        e.preventDefault();
-        window.location.href = '404.html';
-      }
+  // Blanket catch-all for any other unhandled forms
+  const otherForms = document.querySelectorAll('form:not(#login-form):not(#signup-form):not(#contact-form):not(.newsletter-form)');
+  otherForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.location.href = '404.html';
     });
   });
 }
