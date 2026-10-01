@@ -27,44 +27,41 @@
 <body style="background: linear-gradient(135deg, #0B0F19 0%, #111827 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem 1rem;">
 
   <main style="width: 100%; display: flex; align-items: center; justify-content: center;">
-    <div class="container container-narrow" style="max-width: 480px;">
+    <div class="container container-narrow" style="max-width: 360px; padding: 0;">
       
       <!-- Top Back to Home Button -->
-      <div style="margin-bottom: 1.25rem;">
-        <a href="index.html" class="btn btn-outline btn-sm" style="color: #FFFFFF; border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.08);">
-          <i class="fa-solid fa-arrow-left"></i> Back to Home
+      <div style="margin-bottom: 1rem;">
+        <a href="index.html" class="btn btn-outline btn-sm" style="color: #FFFFFF; border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.08); padding: 0.4rem 0.75rem; font-size: 0.85rem;">
+          <i class="fa-solid fa-arrow-left"></i> Back
         </a>
       </div>
 
-      <div class="card" style="padding: 2rem 1.5rem; background-color: #FFFFFF; border-radius: var(--radius-lg); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);">
-        <div class="text-center" style="margin-bottom: 2rem;">
-          <a href="index.html" class="brand-logo" style="display: inline-block; margin-bottom: 1.25rem;">
-            <img src="assets/logo.webp" alt="Stackly Logo" class="brand-logo-img" style="height: 44px;">
+      <div class="card" style="padding: 1.5rem 1.25rem; background-color: #FFFFFF; border-radius: var(--radius-lg); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);">
+        <div class="text-center" style="margin-bottom: 1.5rem;">
+          <a href="index.html" class="brand-logo" style="display: inline-block; margin-bottom: 1rem;">
+            <img src="assets/logo.webp" alt="Stackly Logo" class="brand-logo-img" style="height: 36px;">
           </a>
-          <span class="badge badge-primary" style="display: block; width: fit-content; margin: 0 auto 0.75rem auto;"><i class="fa-solid fa-user-plus"></i> Registration</span>
-          <h1 class="section-title" style="font-size: 2rem;">Create Your Account</h1>
-          <p class="section-description">Join Stackly Recruitment Agency to access exclusive job shortlists or manage employer requisitions.</p>
+          <h1 class="section-title" style="font-size: 1.5rem; margin-top: 0;">Sign Up</h1>
+          <p class="section-description" style="font-size: 0.85rem; margin-bottom: 0;">Create your account.</p>
         </div>
 
         <form id="signup-form" novalidate>
-          <div class="form-group">
-            <label for="signup-name" class="form-label">Full Name *</label>
-            <input type="text" id="signup-name" class="form-control" placeholder="e.g. Alexander Mercer" required>
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="signup-name" class="form-label" style="font-size: 0.85rem;">Full Name *</label>
+            <input type="text" id="signup-name" class="form-control" placeholder="e.g. Alexander Mercer" style="padding: 0.5rem 0.75rem; font-size: 0.9rem;" required>
             <div class="invalid-feedback">Full Name is required.</div>
           </div>
 
-          <div class="grid grid-2">
-            <div class="form-group">
-              <label for="signup-email" class="form-label">Email Address *</label>
-              <input type="email" id="signup-email" class="form-control" placeholder="alexander@company.com" required>
-              <div class="invalid-feedback">Please enter a valid email address.</div>
-            </div>
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="signup-email" class="form-label" style="font-size: 0.85rem;">Email Address *</label>
+            <input type="email" id="signup-email" class="form-control" placeholder="alexander@company.com" style="padding: 0.5rem 0.75rem; font-size: 0.9rem;" required>
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
 
-            <div class="form-group">
-              <label for="signup-phone" class="form-label">Phone Number *</label>
-              <input type="tel" id="signup-phone" class="form-control" placeholder="e.g. +91 98765 43210" required>
-              <div class="invalid-feedback">Please enter a valid phone number.</div>
-            </div>
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="signup-phone" class="form-label" style="font-size: 0.85rem;">Phone Number *</label>
+            <input type="tel" id="signup-phone" class="form-control" placeholder="e.g. +91 98765 43210" style="padding: 0.5rem 0.75rem; font-size: 0.9rem;" required>
+            <div class="invalid-feedback">Please enter a valid phone number.</div>
           </div>
 
           <div class="grid grid-2">
@@ -92,16 +89,16 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1.5rem;">
-            <i class="fa-solid fa-user-plus"></i> Complete Account Registration
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem; padding: 0.75rem;">
+            <i class="fa-solid fa-user-plus"></i> Sign Up
           </button>
         </form>
 
-        <div class="text-center" style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-muted);">
-          Already have an account? <a href="login.html" style="color: var(--primary-blue); font-weight: 700;">Sign In Here</a>
+        <div class="text-center" style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+          Already have an account? <a href="login.html" style="color: var(--primary-blue); font-weight: 700;">Sign In</a>
         </div>
 
-        <div class="text-center" style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+        <div class="text-center" style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-light);">
           <a href="index.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;">
             <i class="fa-solid fa-house"></i> Return to Homepage
           </a>
