@@ -167,6 +167,7 @@ function initLoginValidation() {
   const emailInput = document.getElementById('login-email');
   const passwordInput = document.getElementById('login-password');
   const roleRadios = document.querySelectorAll('input[name="login-role"]');
+  const roleSelect = document.querySelector('select[name="login-role"]');
 
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -192,9 +193,13 @@ function initLoginValidation() {
 
     // Determine role selection
     let selectedRole = 'Admin';
-    roleRadios.forEach(radio => {
-      if (radio.checked) selectedRole = radio.value;
-    });
+    if (roleSelect) {
+      selectedRole = roleSelect.value;
+    } else {
+      roleRadios.forEach(radio => {
+        if (radio.checked) selectedRole = radio.value;
+      });
+    }
 
     if (isValid) {
       localStorage.setItem('userEmail', emailVal);

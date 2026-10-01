@@ -382,6 +382,7 @@
 
 .dash-table {
   width: 100%;
+  min-width: 900px;
   border-collapse: collapse;
   text-align: left;
   font-size: 0.9rem;
@@ -579,6 +580,11 @@
     max-width: 100% !important;
     overflow-x: hidden !important;
     box-sizing: border-box !important;
+  }
+  .dash-card-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem;
   }
   .kpi-row {
     grid-template-columns: 1fr;
