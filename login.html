@@ -38,8 +38,8 @@
 
       <div class="card" style="padding: 1.5rem 1.25rem; background-color: #FFFFFF; border-radius: var(--radius-lg); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);">
         <div class="text-center" style="margin-bottom: 1.5rem;">
-          <a href="index.html" class="brand-logo" style="display: inline-block; margin-bottom: 1rem;">
-            <img src="assets/logo.webp" alt="Stackly Logo" class="brand-logo-img" style="height: 36px;">
+          <a href="index.html" class="brand-logo" style="display: inline-block; margin-bottom: 1rem; background: #0B0F19; padding: 0.5rem 1rem; border-radius: 8px;">
+            <img src="assets/logo.webp" alt="Stackly Logo" class="brand-logo-img" style="height: 36px; display: block;">
           </a>
           <h1 class="section-title" style="font-size: 1.5rem; margin-top: 0;">Sign In</h1>
           <p class="section-description" style="font-size: 0.85rem; margin-bottom: 0;">Access your workspace.</p>
@@ -61,7 +61,10 @@
           </div>
 
           <div class="form-group">
-            <label for="login-password" class="form-label">Password *</label>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <label for="login-password" class="form-label" style="margin-bottom: 0;">Password *</label>
+              <a href="404.html" style="font-size: 0.8rem; color: var(--primary-blue); text-decoration: none; font-weight: 600;">Forgot Password?</a>
+            </div>
             <div style="position: relative;">
               <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
               <button type="button" class="password-toggle-btn" aria-label="Toggle Password Visibility" style="position: absolute; right: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);">

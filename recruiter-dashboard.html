@@ -20,8 +20,49 @@
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/responsive.css">
   <link rel="stylesheet" href="assets/dashboard.css">
+  
+  <style>
+    /* Recruiter Dashboard Unique Theme */
+    .dashboard-sidebar {
+      background-color: #F8FAFC !important;
+      border-right: 1px solid #E2E8F0;
+    }
+    .dashboard-sidebar .brand-logo-img {
+      filter: brightness(0);
+    }
+    .sidebar-menu-label {
+      color: #64748B !important;
+    }
+    .sidebar-item {
+      color: #334155 !important;
+    }
+    .sidebar-item:hover, .sidebar-item.active {
+      background-color: #0F766E !important;
+      color: #FFFFFF !important;
+    }
+    .user-name { color: #1E293B !important; }
+    .user-email-display { color: #64748B !important; }
+    .logout-btn { color: #EF4444 !important; }
+    
+    /* Restructure layout order */
+    .dashboard-body {
+      display: flex;
+      flex-direction: column;
+    }
+    #welcome-wrapper { order: 1; }
+    #interviews { order: 2; }
+    #pipeline { order: 3; }
+    #active-jobs { order: 4; }
+    #shortlist { order: 5; }
+    #targets { order: 6; }
+    
+    /* Modify specific sections */
+    .dash-banner {
+      background: linear-gradient(135deg, #0F766E 0%, #064E3B 100%) !important;
+    }
+  </style>
 </head>
-<body>
+<body class="recruiter-theme">
 
   <div class="dashboard-layout">
     <!-- SECTION 1: RECRUITER SIDEBAR NAVIGATION -->
@@ -48,10 +89,8 @@
           <img src="assets/recruiter-2.webp" alt="David Chen Recruiter Avatar" class="user-avatar" style="border-color: var(--accent-teal);">
           <div class="user-info">
             <div class="user-name">David Chen</div>
-            <div class="user-email-display" style="font-size: 0.775rem; color: #94A3B8; word-break: break-all; margin: 0.15rem 0;">recruiter@stackly.com</div>
-            <div class="user-role" style="font-size: 0.725rem; color: var(--accent-teal);">Senior Tech Recruiter</div>
+            <div class="user-email-display" style="font-size: 0.775rem; color: #94A3B8; word-break: break-all; margin-top: 0.15rem;">recruiter@stackly.com</div>
           </div>
-          <a href="index.html" class="logout-btn" style="color: #EF4444;" title="Sign Out / Home"><i class="fa-solid fa-right-from-bracket"></i></a>
         </div>
       </div>
     </aside>
@@ -67,7 +106,7 @@
           <section class="dash-banner" id="welcome">
             <div class="dash-banner-content">
               <h2>Good Morning, <span class="user-greeting-name">David</span>! 🚀</h2>
-              <p>You have <strong>4 interviews</strong> scheduled today. 2 candidates are awaiting client offer responses.</p>
+              <p>You have <strong>3 new direct messages</strong> from clients. 5 resumes require your final review.</p>
             </div>
             <div class="dash-banner-actions">
               <button class="btn btn-primary" style="background-color: var(--accent-teal);" onclick="window.location.href='404.html'" data-quick-action="Schedule New Candidate Screening">
@@ -77,7 +116,7 @@
           </section>
 
           <!-- PERSONAL KPIS -->
-          <section class="kpi-row" id="personal-kpis" style="margin-top: 1.5rem;">
+          <section class="kpi-row" id="personal-kpis" style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
             <div class="kpi-card">
               <div class="kpi-icon kpi-icon-teal"><i class="fa-solid fa-briefcase"></i></div>
               <div>
@@ -122,9 +161,9 @@
                 <h3 class="dash-card-title"><i class="fa-solid fa-list-ul" style="color: var(--accent-teal);"></i> Priority Sourcing Checklist</h3>
               </div>
               <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-dark);">
-                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Confirm offer letter terms with Marcus Vance (Target closing: 5:00 PM).</li>
-                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Send background screening link to Elena Rostova for AI Architect role.</li>
-                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Schedule final interview debrief with FinTech Dynamics hiring manager.</li>
+                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Confirm offer letter terms with Sarah Jenkins (Target closing: 5:00 PM).</li>
+                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Send background screening link to Michael Chang for AI Architect role.</li>
+                <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Schedule final interview debrief with Quantum Systems Ltd hiring manager.</li>
                 <li><i class="fa-solid fa-square-check" style="color: var(--accent-teal);"></i> Review senior candidate shortlist for Tata Tech Solutions CISO role.</li>
               </ul>
             </section>
@@ -135,7 +174,7 @@
               </div>
               <div style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-md); font-size: 0.9rem; line-height: 1.6;">
                 <p>📌 <strong>Client Feedback Call:</strong> 2:00 PM with CloudScale VP of Engineering regarding DevOps candidates.</p>
-                <p style="margin-top: 0.5rem;">📌 <strong>Salary Negotiation:</strong> Arjun Patel expecting $175k base + 15% bonus for Lead Architect position.</p>
+                <p style="margin-top: 0.5rem;">📌 <strong>Salary Negotiation:</strong> James O'Connor expecting $175k base + 15% bonus for Lead Architect position.</p>
               </div>
             </section>
           </div>
@@ -163,48 +202,48 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Principal AI Architect</strong></td>
-                  <td>FinTech Dynamics</td>
+                  <td><strong>Head of Machine Learning</strong></td>
+                  <td>Quantum Systems Ltd</td>
                   <td>$210,000 - $240,000</td>
                   <td>6 candidates</td>
                   <td><span class="status-badge status-active">Active</span></td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Shortlist">Manage</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Senior DevOps Lead</strong></td>
-                  <td>CloudScale Solutions</td>
+                  <td><strong>Cloud Infrastructure Manager</strong></td>
+                  <td>Global Logistics Inc</td>
                   <td>$165,000 - $190,000</td>
                   <td>4 candidates</td>
                   <td><span class="status-badge status-pending">Screening</span></td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Shortlist">Manage</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Lead Full-Stack Architect</strong></td>
-                  <td>Infosys Innovation Lab</td>
+                  <td><strong>Senior React Developer</strong></td>
+                  <td>Acme Tech Group</td>
                   <td>$160,000 - $190,000</td>
                   <td>8 candidates</td>
                   <td><span class="status-badge status-active">Interviewing</span></td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Shortlist">Manage</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Director of Engineering</strong></td>
-                  <td>CloudNexus Inc</td>
+                  <td><strong>VP of Technology</strong></td>
+                  <td>HealthCare Partners</td>
                   <td>$220,000 - $250,000</td>
                   <td>5 candidates</td>
                   <td><span class="status-badge status-pending">Offer Stage</span></td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Shortlist">Manage</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Staff Data Engineer</strong></td>
-                  <td>Razorpay Payments</td>
+                  <td><strong>Lead Data Scientist</strong></td>
+                  <td>EduTech International</td>
                   <td>$180,000 - $210,000</td>
                   <td>7 candidates</td>
                   <td><span class="status-badge status-active">Sourcing</span></td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="View Shortlist">Manage</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Quant Risk Specialist</strong></td>
-                  <td>Stackly Capital Partners</td>
+                  <td><strong>Cybersecurity Analyst</strong></td>
+                  <td>First Bank Corp</td>
                   <td>$290,000 - $340,000</td>
                   <td>5 candidates</td>
                   <td><span class="status-badge status-active">Interviewing</span></td>
@@ -236,30 +275,30 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Elena Rostova</strong></td>
+                  <td><strong>Michael Chang</strong></td>
                   <td>PyTorch, AWS, LLM Fine-Tuning</td>
-                  <td>Principal AI Architect</td>
+                  <td>Head of Machine Learning</td>
                   <td><span style="color: #F59E0B;">★★★★★</span> (98% Match)</td>
                   <td><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'" data-quick-action="Submit to Client">Submit to Client</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Marcus Vance</strong></td>
+                  <td><strong>Sarah Jenkins</strong></td>
                   <td>Kubernetes, Go, Microservices</td>
                   <td>VP of Engineering</td>
                   <td><span style="color: #F59E0B;">★★★★★</span> (95% Match)</td>
                   <td><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'" data-quick-action="Submit to Client">Submit to Client</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Arjun Patel</strong></td>
+                  <td><strong>James O'Connor</strong></td>
                   <td>React, Node.js, GraphQL</td>
-                  <td>Lead Full-Stack Architect</td>
+                  <td>Senior React Developer</td>
                   <td><span style="color: #F59E0B;">★★★★☆</span> (90% Match)</td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Schedule Interview">Schedule Interview</button></td>
                 </tr>
                 <tr>
-                  <td><strong>Vikram Sundaram</strong></td>
+                  <td><strong>Emily Davis</strong></td>
                   <td>DevOps, Terraform, AWS Cloud</td>
-                  <td>Senior DevOps Lead</td>
+                  <td>Cloud Infrastructure Manager</td>
                   <td><span style="color: #F59E0B;">★★★★★</span> (94% Match)</td>
                   <td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'" data-quick-action="Schedule Interview">Schedule Interview</button></td>
                 </tr>
@@ -281,8 +320,8 @@
             <div class="pipeline-column">
               <div class="column-header">SOURCED (12) <i class="fa-solid fa-ellipsis"></i></div>
               <div class="candidate-mini-card">
-                <div class="mini-card-name">Elena Rostova</div>
-                <div class="mini-card-role">Principal AI Architect</div>
+                <div class="mini-card-name">Michael Chang</div>
+                <div class="mini-card-role">Head of Machine Learning</div>
               </div>
               <div class="candidate-mini-card">
                 <div class="mini-card-name">Jonathan Vance</div>
@@ -297,7 +336,7 @@
                 <div class="mini-card-role">Clinical Director</div>
               </div>
               <div class="candidate-mini-card">
-                <div class="mini-card-name">Vikram Sundaram</div>
+                <div class="mini-card-name">Emily Davis</div>
                 <div class="mini-card-role">DevOps Lead</div>
               </div>
             </div>
@@ -305,7 +344,7 @@
             <div class="pipeline-column">
               <div class="column-header">INTERVIEWING (6) <i class="fa-solid fa-ellipsis"></i></div>
               <div class="candidate-mini-card">
-                <div class="mini-card-name">Arjun Patel</div>
+                <div class="mini-card-name">James O'Connor</div>
                 <div class="mini-card-role">Full-Stack Architect</div>
               </div>
             </div>
@@ -313,7 +352,7 @@
             <div class="pipeline-column">
               <div class="column-header">OFFERED (2) <i class="fa-solid fa-ellipsis"></i></div>
               <div class="candidate-mini-card" style="border-left-color: #10B981;">
-                <div class="mini-card-name">Marcus Vance</div>
+                <div class="mini-card-name">Sarah Jenkins</div>
                 <div class="mini-card-role">VP Engineering</div>
               </div>
             </div>
@@ -335,22 +374,22 @@
           <div class="grid grid-2">
             <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-blue);">
               <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary-blue);">10:00 AM - 10:45 AM (Zoom)</div>
-              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Elena Rostova • AI Screening</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: FinTech Dynamics (Technical Round 1)</p>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Michael Chang • AI Screening</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: Quantum Systems Ltd (Technical Round 1)</p>
             </div>
             <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-teal);">
               <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-teal);">11:30 AM - 12:15 PM (Zoom)</div>
-              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Arjun Patel • Full-Stack Review</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: Infosys Innovation Lab</p>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">James O'Connor • Full-Stack Review</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: Acme Tech Group</p>
             </div>
             <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-gold);">
               <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold);">02:00 PM - 03:00 PM (In-Person / Salem HQ)</div>
-              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Vikram Sundaram • Cloud Architecture</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: CloudScale Solutions</p>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Emily Davis • Cloud Architecture</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Client: Global Logistics Inc</p>
             </div>
             <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid #10B981;">
               <div style="font-size: 0.8rem; font-weight: 700; color: #10B981;">04:30 PM - 05:15 PM (Zoom)</div>
-              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Marcus Vance • Final Offer Discussion</h4>
+              <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0.25rem;">Sarah Jenkins • Final Offer Discussion</h4>
               <p style="font-size: 0.85rem; color: var(--text-muted);">Client: BioHealth Global</p>
             </div>
           </div>
