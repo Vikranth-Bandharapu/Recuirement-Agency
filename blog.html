@@ -364,8 +364,11 @@
           <span class="badge badge-gold" style="margin-bottom: 1rem;"><i class="fa-solid fa-paper-plane"></i> Stay Ahead</span>
           <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem;">Subscribe to Stackly Talent Intelligence</h2>
           <p style="color: #94A3B8; max-width: 650px; margin: 0 auto 2rem auto;">Join 25,000+ executives receiving our bi-weekly talent reports, salary benchmarks, and hiring market intelligence.</p>
-          <form class="newsletter-form" style="max-width: 550px; margin: 0 auto;" onsubmit="event.preventDefault(); window.location.href='404.html';">
-            <input type="email" placeholder="Enter your business email..." required aria-label="Business Email Address">
+          <form class="newsletter-form" style="max-width: 550px; margin: 0 auto;" novalidate>
+            <div style="width: 100%; text-align: left;">
+              <input type="email" class="form-control" name="newsletter-email" placeholder="Enter your business email..." required aria-label="Business Email Address" style="width: 100%; border-radius: 8px; margin-bottom: 0;">
+              <div class="invalid-feedback" style="display: none; color: #EF4444; font-size: 0.85rem; margin-top: 0.5rem; text-align: left;">Please enter a valid email address.</div>
+            </div>
             <button type="submit" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Subscribe</button>
           </form>
         </div>

@@ -633,8 +633,11 @@
               <p style="color: #94A3B8; font-size: 1.1rem;">Receive quarterly executive salary benchmarks, hiring trend reports, and talent acquisition strategies.</p>
             </div>
             <div>
-              <form class="newsletter-form" onsubmit="event.preventDefault(); window.location.href='404.html';">
-                <input type="email" placeholder="Enter your business email" required aria-label="Business Email Address">
+              <form class="newsletter-form" novalidate>
+                <div style="width: 100%; text-align: left;">
+                  <input type="email" class="form-control" name="newsletter-email" placeholder="Enter your business email" required aria-label="Business Email Address" style="width: 100%; border-radius: 8px; margin-bottom: 0;">
+                  <div class="invalid-feedback" style="display: none; color: #EF4444; font-size: 0.85rem; margin-top: 0.5rem;">Please enter a valid email address.</div>
+                </div>
                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-bell"></i> Subscribe</button>
               </form>
               <div style="font-size: 0.825rem; color: #64748B; margin-top: 0.85rem;">We respect your privacy. Unsubscribe anytime.</div>
