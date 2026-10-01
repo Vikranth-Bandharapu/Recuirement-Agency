@@ -96,6 +96,8 @@ main {
   flex: 1;
   position: relative;
   z-index: 1;
+  padding-top: 85px;
+  overflow-x: hidden;
 }
 
 img {
@@ -134,13 +136,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
    3. Header Navigation & Brand Logo Image
    -------------------------------------------------------------------------- */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   background-color: rgba(11, 15, 25, 0.95);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   transition: all var(--transition-normal);
 }

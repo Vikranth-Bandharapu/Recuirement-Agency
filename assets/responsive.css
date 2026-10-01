@@ -1,8 +1,9 @@
-/* Global Horizontal Overflow Prevention */
 html, body {
   overflow-x: hidden !important;
   max-width: 100% !important;
   width: 100% !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
 }
 
 .container, .container-narrow, main, section, .hero-section, .site-header, .site-footer {
@@ -44,6 +45,9 @@ html, body {
    3. Small Desktop / Laptop (1024px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  main {
+    padding-top: 70px;
+  }
   .container {
     max-width: 960px;
   }
@@ -70,6 +74,10 @@ html, body {
   }
   .hero-image-wrapper img {
     height: 400px;
+  }
+  .floating-stat-card {
+    left: 1rem;
+    bottom: 1rem;
   }
   .footer-top {
     grid-template-columns: 1fr 1fr;
