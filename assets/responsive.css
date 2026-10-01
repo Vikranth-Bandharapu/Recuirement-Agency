@@ -7,13 +7,11 @@ html, body {
 }
 
 .container, .container-narrow, main, section, .hero-section, .site-header, .site-footer {
-  max-width: 100% !important;
   box-sizing: border-box !important;
 }
 
 .hero-grid, .grid, .stats-grid, .process-grid, .pipeline-grid, .kpi-row, .card, .dash-card {
   min-width: 0 !important;
-  max-width: 100% !important;
   box-sizing: border-box !important;
 }
 
