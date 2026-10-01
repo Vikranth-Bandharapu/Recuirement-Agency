@@ -1,7 +1,20 @@
-/* ==========================================================================
-   Stackly Recruitment Agency - Responsive Breakpoint Stylesheet
-   Breakpoints tested: 1920px, 1440px, 1024px, 768px, 480px, 360px
-   ========================================================================== */
+/* Global Horizontal Overflow Prevention */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.container, .container-narrow, main, section, .hero-section, .site-header, .site-footer {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.hero-grid, .grid, .stats-grid, .process-grid, .pipeline-grid, .kpi-row, .card, .dash-card {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
 
 /* --------------------------------------------------------------------------
    1. Large Desktop (1920px and above)

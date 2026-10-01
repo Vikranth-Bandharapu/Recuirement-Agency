@@ -197,44 +197,47 @@ function renderHiringFunnelChart() {
     { label: 'Placed', value: 78, color: '#10B981' }
   ];
 
-  const containerWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 500;
-  const width = canvas.width = Math.max(containerWidth, 340);
+  const parentWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 300;
+  const width = canvas.width = Math.max(parentWidth, 240);
   const height = canvas.height = 260;
 
   const maxVal = 1240;
-  const barHeight = 28;
+  const barHeight = 26;
   const gap = 12;
 
   ctx.clearRect(0, 0, width, height);
 
-  const availableWidth = Math.max(width - 170, 140);
+  const labelColWidth = width < 340 ? 75 : 105;
+  const availableWidth = Math.max(width - labelColWidth - 55, 60);
 
   data.forEach((item, index) => {
-    const y = index * (barHeight + gap) + 20;
+    const y = index * (barHeight + gap) + 15;
     const barWidth = (item.value / maxVal) * availableWidth;
 
     // Label
     ctx.fillStyle = '#475569';
-    ctx.font = '600 13px Segoe UI';
+    ctx.font = '600 12px Segoe UI';
     ctx.textAlign = 'left';
-    ctx.fillText(item.label, 10, y + 18);
+    ctx.fillText(item.label, 4, y + 17);
 
     // Bar background
     ctx.fillStyle = '#F1F5F9';
     ctx.beginPath();
-    ctx.roundRect(110, y, availableWidth, barHeight, 6);
+    if (ctx.roundRect) ctx.roundRect(labelColWidth, y, availableWidth, barHeight, 6);
+    else ctx.rect(labelColWidth, y, availableWidth, barHeight);
     ctx.fill();
 
     // Bar fill
     ctx.fillStyle = item.color;
     ctx.beginPath();
-    ctx.roundRect(110, y, Math.max(barWidth, 8), barHeight, 6);
+    if (ctx.roundRect) ctx.roundRect(labelColWidth, y, Math.max(barWidth, 6), barHeight, 6);
+    else ctx.rect(labelColWidth, y, Math.max(barWidth, 6), barHeight);
     ctx.fill();
 
     // Value text
     ctx.fillStyle = '#0F172A';
-    ctx.font = '700 12px Segoe UI';
-    ctx.fillText(item.value.toString(), 110 + barWidth + 8, y + 18);
+    ctx.font = '700 11px Segoe UI';
+    ctx.fillText(item.value.toString(), labelColWidth + barWidth + 6, y + 17);
   });
 }
 
@@ -247,16 +250,16 @@ function renderPlacementTrendChart() {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
   const placements = [24, 31, 28, 42, 38, 55, 62, 58, 74];
 
-  const containerWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 500;
-  const width = canvas.width = Math.max(containerWidth, 340);
+  const parentWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 300;
+  const width = canvas.width = Math.max(parentWidth, 240);
   const height = canvas.height = 260;
 
   ctx.clearRect(0, 0, width, height);
 
-  const paddingLeft = 40;
-  const paddingBottom = 40;
-  const chartWidth = width - paddingLeft - 20;
-  const chartHeight = height - paddingBottom - 20;
+  const paddingLeft = 32;
+  const paddingBottom = 35;
+  const chartWidth = width - paddingLeft - 15;
+  const chartHeight = height - paddingBottom - 15;
   const maxVal = 80;
 
   // Draw grid lines
@@ -264,16 +267,16 @@ function renderPlacementTrendChart() {
   ctx.lineWidth = 1;
 
   for (let i = 0; i <= 4; i++) {
-    const y = 20 + (chartHeight / 4) * i;
+    const y = 15 + (chartHeight / 4) * i;
     ctx.beginPath();
     ctx.moveTo(paddingLeft, y);
-    ctx.lineTo(width - 20, y);
+    ctx.lineTo(width - 15, y);
     ctx.stroke();
 
     ctx.fillStyle = '#94A3B8';
-    ctx.font = '11px Segoe UI';
+    ctx.font = '10px Segoe UI';
     ctx.textAlign = 'right';
-    ctx.fillText((maxVal - (maxVal / 4) * i).toString(), paddingLeft - 8, y + 4);
+    ctx.fillText((maxVal - (maxVal / 4) * i).toString(), paddingLeft - 6, y + 4);
   }
 
   // Draw line graph
